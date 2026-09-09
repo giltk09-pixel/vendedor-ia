@@ -9,7 +9,7 @@
    Exemplo real: "https://pay.kiwify.com.br/SUA_CHAVE"
    Enquanto for "#", os botões não levam a nenhum destino.
 ------------------------------------------------------------------ */
-var KIWIFY_CHECKOUT_URL = "#";
+var KIWIFY_CHECKOUT_URL = "https://pay.kiwify.com.br/mc38XlN";
 
 (function () {
   "use strict";
