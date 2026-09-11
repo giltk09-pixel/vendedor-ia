@@ -33,6 +33,22 @@
 
   gtag('config', 'G-76HLZ8M693');
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona todos os links que levam para a Kiwify
+    const botoesCompra = document.querySelectorAll('a[href*="pay.kiwify.com.br"]');
+
+    botoesCompra.forEach(function(botao) {
+      botao.addEventListener('click', function() {
+        gtag('event', 'clique_botao_compra', {
+          'event_category': 'Conversao',
+          'event_label': 'Botao Kiwify',
+          'value': 27
+        });
+      });
+    });
+  });
+</script>  
 </head>
 <body>
 
