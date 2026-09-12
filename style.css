@@ -361,7 +361,6 @@ strong { font-weight: 700; }
 .cta-strip .btn { max-width: 100%; }
 .price-inline { color: var(--amber); font-weight: 800; }
 .cta-strip-title .price-inline { font-size: 1.45em; color: var(--amber-strong); }
-.cta-final-note .price-inline { font-size: 1.6em; }
 
 /* ---------- exemplos ---------- */
 .exemplos { display: grid; gap: 20px; }
@@ -548,36 +547,10 @@ strong { font-weight: 700; }
   color: var(--grey);
 }
 .selo-garantia {
-  width: 118px;
-  height: 118px;
+  display: block;
+  width: 132px;
+  height: auto;
   margin: 0 auto 20px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 32%, #FDFEFD, var(--box));
-  border: 3px dashed var(--primary);
-  outline: 1px solid var(--box-border);
-  outline-offset: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(-6deg);
-  box-shadow: 0 12px 26px -14px rgba(12, 62, 45, 0.45);
-}
-.selo-num {
-  font-size: 46px;
-  font-weight: 800;
-  line-height: 1;
-  color: var(--primary);
-}
-.selo-txt {
-  margin-top: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--primary);
-  text-align: center;
-  line-height: 1.25;
 }
 
 /* ---------- FAQ ---------- */
@@ -628,6 +601,13 @@ strong { font-weight: 700; }
   max-width: 780px;
 }
 .cta-final .btn { max-width: 420px; }
+.cta-final-preco {
+  font-size: clamp(54px, 11vw, 64px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--amber);
+}
 .cta-final-note {
   font-size: 14.5px;
   color: rgba(255, 255, 255, 0.65);
@@ -677,11 +657,10 @@ strong { font-weight: 700; }
     padding-top: 84px;
     padding-bottom: 96px;
   }
-  .hero-cta-row { justify-items: start; }
+  .hero-cta-row { justify-items: center; }
   .hero-note { text-align: left; }
   .hero-visual { display: block; text-align: right; }
   .hero-cover-mobile { display: none; }
-  .hero-price-row { align-items: flex-start; }
   .hero-trust { text-align: left; }
   .cover-frame { margin: 0 0 0 auto; }
   .cards { grid-template-columns: repeat(3, 1fr); }
