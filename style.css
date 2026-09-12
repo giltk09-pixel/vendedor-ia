@@ -177,7 +177,7 @@ strong { font-weight: 700; }
   padding: 7px 14px;
 }
 
-.hero-visual { text-align: center; }
+.hero-visual { display: none; text-align: center; }
 .cover-frame {
   position: relative;
   max-width: 300px;
@@ -192,6 +192,30 @@ strong { font-weight: 700; }
   font-size: 13px;
   color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.04em;
+}
+.hero-cover-mobile { margin-top: 8px; }
+.hero-cover-mobile .cover-frame { max-width: 224px; }
+.hero-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+.hero-price {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--accent-soft);
+}
+.hero-price-tag { font-size: 14px; color: rgba(255, 255, 255, 0.75); }
+.hero-trust {
+  margin-top: 14px;
+  font-size: 13.5px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 /* ---------- seções ---------- */
@@ -308,24 +332,73 @@ strong { font-weight: 700; }
 .momento h3 { font-size: 18px; color: var(--white); margin-bottom: 4px; }
 .momento p { font-size: 15.5px; color: rgba(255, 255, 255, 0.72); }
 
+/* ---------- CTA strip (intermediário) ---------- */
+.cta-strip {
+  max-width: 680px;
+  margin: 40px auto 0;
+  text-align: center;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  background: var(--box);
+  border: 1px solid var(--box-border);
+  border-radius: var(--radius);
+  padding: 30px 22px;
+}
+.cta-strip-dark {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--dark-line);
+}
+.cta-strip-title {
+  font-size: clamp(20px, 4.5vw, 26px);
+  line-height: 1.25;
+  color: var(--ink);
+}
+.cta-strip-dark .cta-strip-title { color: var(--white); }
+.cta-strip-sub { font-size: 15px; color: var(--grey); }
+.cta-strip-dark .cta-strip-sub { color: rgba(255, 255, 255, 0.72); }
+.cta-strip .btn { max-width: 100%; }
+
 /* ---------- exemplos ---------- */
 .exemplos { display: grid; gap: 20px; }
 .exemplo {
   background: var(--white);
   border: 1px solid var(--box-border);
   border-radius: var(--radius);
-  padding: 22px;
+  padding: 18px 22px;
   display: grid;
   gap: 12px;
   box-shadow: 0 10px 26px -18px rgba(12, 62, 45, 0.25);
 }
-.exemplo-label {
+.exemplo summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--primary);
 }
+.exemplo summary::-webkit-details-marker { display: none; }
+.exemplo summary::after {
+  content: "+";
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--box);
+  border: 1px solid var(--box-border);
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+.exemplo[open] summary::after { content: "–"; }
 .prompt-box {
   background: var(--box);
   border: 1px solid var(--box-border);
@@ -443,6 +516,13 @@ strong { font-weight: 700; }
   color: rgba(255, 255, 255, 0.9);
 }
 .oferta-panel .checks li::before { background: rgba(23, 166, 115, 0.22); border: 1px solid var(--accent-soft); color: var(--accent-soft); }
+.oferta-note {
+  font-size: 15.5px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 520px;
+  margin: 0 auto 22px;
+}
 
 /* ---------- garantia ---------- */
 .garantia-box {
@@ -456,6 +536,11 @@ strong { font-weight: 700; }
   text-align: center;
   font-size: 16.5px;
   color: var(--ink);
+}
+.garantia-note {
+  margin-top: 10px;
+  font-size: 14.5px;
+  color: var(--grey);
 }
 
 /* ---------- FAQ ---------- */
@@ -506,6 +591,10 @@ strong { font-weight: 700; }
   max-width: 780px;
 }
 .cta-final .btn { max-width: 420px; }
+.cta-final-note {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.65);
+}
 
 /* ---------- footer ---------- */
 .footer {
@@ -553,7 +642,10 @@ strong { font-weight: 700; }
   }
   .hero-cta-row { justify-items: start; }
   .hero-note { text-align: left; }
-  .hero-visual { text-align: right; }
+  .hero-visual { display: block; text-align: right; }
+  .hero-cover-mobile { display: none; }
+  .hero-price-row { justify-content: flex-start; }
+  .hero-trust { text-align: left; }
   .cover-frame { margin: 0 0 0 auto; }
   .cards { grid-template-columns: repeat(3, 1fr); }
   .recursos { grid-template-columns: repeat(3, 1fr); }
