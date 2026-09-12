@@ -166,6 +166,7 @@ strong { font-weight: 700; }
 .chips {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   margin-top: 22px;
 }
@@ -661,7 +662,7 @@ strong { font-weight: 700; }
   .hero-note { text-align: left; }
   .hero-visual { display: block; text-align: right; }
   .hero-cover-mobile { display: none; }
-  .hero-trust { text-align: left; }
+  .hero-trust { text-align: center; }
   .cover-frame { margin: 0 0 0 auto; }
   .cards { grid-template-columns: repeat(3, 1fr); }
   .recursos { grid-template-columns: repeat(3, 1fr); }
